@@ -1,0 +1,43 @@
+<div *ngIf="receivedEvent!=null">
+<h1 [innerText]="title"></h1>
+<hr>
+<table class="table table-hover table-stripped">
+    <tr>
+        <th>Event Id</th>
+        <td><span [innerText]="receivedEvent.eventId"></span></td>
+    </tr>
+    <tr>
+        <th>Event Code</th>
+        <td><span [innerText]="receivedEvent.eventCode"></span></td>
+    </tr>
+    <tr>
+        <th>Event Name</th>
+        <td><span [innerText]="receivedEvent.eventName"></span></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><span [innerText]="receivedEvent.description"></span></td>
+    </tr>
+    <tr>
+        <th>Start date</th>
+        <td><span [innerText]="receivedEvent.startDate"></span></td>
+    </tr>
+    <tr>
+        <th>End date</th>
+        <td><span [innerText]="receivedEvent.endDate"></span></td>
+    </tr>
+    <tr>
+        <th>Fees</th>
+        <td><span [innerText]="receivedEvent.fees"></span></td>
+    </tr>
+    <tr>
+        <th>Ratings</th>
+        <td><div class="progress">
+           <div class="progress-bar" [style.width]="receivedEvent.ratings + '%'" [title]="receivedEvent.ratings"></div>
+            </div></td>
+    </tr>
+    <tr>
+        <th>Logo</th>
+        <td><img [src]="receivedEvent.imageUrl" [alt]="receivedEvent.eventName" [title]="receivedEvent.eventName"></td>
+    </tr>
+</table>

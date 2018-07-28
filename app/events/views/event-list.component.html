@@ -1,0 +1,33 @@
+<H1 [innerText]="title"></H1>
+<hr>
+<h5 [innerText]="subTitle"></h5>
+<div class="row">
+    <div class="col-md-3">
+        Search by event Name
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" [(ngModel)]="filterChar">
+    </div>
+</div>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Event Code</th>
+            <th>Event Name</th>
+            <th>Start date</th>
+            <th>Fees</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of eventsList | startWithFilter:filterChar">
+            <td><span [innerText]="event.eventCode | firstLetterCapital "></span></td>
+            <td><span [innerText]="event.eventName | uppercase"></span></td>
+            <td><span [innerText]="event.startDate | date:'medium'"></span></td>
+            <td><span [innerText]="event.fees | currency:'INR':true"></span></td>
+            <td><button class="btn btn-info" routerLink="/eventdetails/{{event._id}}">See Details</button></td>
+        </tr>
+    </tbody>
+</table>
+<!--<event-details [selectedEvent]="currentEvent"></event-details>-->

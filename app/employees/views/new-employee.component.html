@@ -1,0 +1,61 @@
+<form class="form-horizontal" [formGroup]="employee.employeeForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <legend>Legend</legend>
+        <div class="form-group">
+            <label for="inputEmployeeId" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmployeeId" name="inputEmployeeId" placeholder="Enter Employee Id" formControlName="employeeId">
+                <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeId'].hasError('required')">Please enter Employee Id</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmployeeName" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmployeeName" name="inputEmployeeName" placeholder="Enter Employee name"
+                    formControlName="employeeName">
+                <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeName'].hasError('required')">Please enter Employee name</div>
+                 <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeName'].hasError('minlength')">atleast 3 char</div>
+                 <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeName'].hasError('maxlength')">max 16 char</div>
+            </div>
+        </div>
+
+
+        <div formGroupName="address">
+            <div class="form-group">
+                <label for="inputStreet" class="col-lg-2 control-label">street Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputStreet" name="inputStreet" placeholder="Enter Street" formControlName="street">
+                    <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['address'].controls['street']hasError('required')">Please enter street name</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputCity" class="col-lg-2 control-label">city Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Enter City" formControlName="city">
+                    <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['address'].controls['city']hasError('required')">Please enter city name</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZipcode" class="col-lg-2 control-label">zip code</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputZipcode" name="inputZipcode" placeholder="Enter Zipcode" formControlName="zipCode">
+                    <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['address'].controls['zipcoed']hasError('required')">Please enter zipcode</div>
+                    <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['address'].controls['zipcoed']hasError('pattern')">6 digit</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter Zipcode" formControlName="email">
+                 <div  class="alert alert-danger" *ngIf="employee.employeeForm.controls['email'].hasError('required')">Please enter email</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary" [disabled="!employee.employeeForm.valid"]>Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

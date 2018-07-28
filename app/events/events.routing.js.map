@@ -1,0 +1,1 @@
+{"version":3,"file":"events.routing.js","sourceRoot":"","sources":["events.routing.ts"],"names":[],"mappings":";;AACA,0CAAuD;AAEvD,4EAAwE;AACxE,wFAAiF;AAEjF,IAAM,iBAAiB,GAAQ;IAC3B;QACI,IAAI,EAAC,EAAE;QACP,SAAS,EAAE,0CAAkB;KAChC;IACA;QACG,IAAI,EAAC,KAAK;QACV,SAAS,EAAE,mDAAqB;KACnC;CACJ,CAAC;AAEW,QAAA,aAAa,GAAqB,qBAAY,CAAC,QAAQ,CAAC,iBAAiB,CAAC,CAAC"}

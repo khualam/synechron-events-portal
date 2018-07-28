@@ -1,0 +1,5 @@
+<h1 [innerText]="title"></h1>
+<hr>
+Received Message - <p [innerText]="receivedMessage"></p>
+<br>
+<syn-child [receivedMessage]="sendMessage" (sendChildMessage)="receivedChildMessage($event)"></syn-child>
